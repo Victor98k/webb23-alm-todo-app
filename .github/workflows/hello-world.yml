@@ -1,10 +1,9 @@
-name: HelloWorld Worflow
-
+name: HelloWorld Worflow  
 
 on:
   push:
     branches:
-      - "tasks-lesson-one"
+      - "tasks-lesson-one"  
       # Defines event that trigger the workflow, tst
 
 jobs:
@@ -13,7 +12,5 @@ jobs:
 
     steps:
         - name: new test
-        uses: actions/checkout@v2
+          uses: actions/checkout@v2  
         run: echo "Hello, World!"  
-
-
