@@ -12,6 +12,6 @@ jobs:
 
     steps:
         - name: new test 
-        run: echo "Hello, World!"  # Directly print the message
+        run: echo "Hello, World!"  
 
 
