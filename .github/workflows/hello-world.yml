@@ -3,7 +3,7 @@ name: HelloWorld Worflow
 on:
   push:
     branches:
-      - master
+      - tasks-lesson-one
       # Defines event that trigger the workflow
 
 jobs:
