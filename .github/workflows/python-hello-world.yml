@@ -3,7 +3,7 @@ name: HelloWorld Workflow
 on:
   push:
     branches:
-      - tasks-two
+      - task-two
 
 jobs:
   build:
