@@ -4,7 +4,7 @@ on:
   push:
     branches:
       - tasks-lesson-one
-      # Defines event that trigger the workflow
+      # Defines event that trigger the workflow, tst
 
 jobs:
   build:
