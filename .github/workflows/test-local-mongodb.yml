@@ -20,14 +20,14 @@ jobs:
     # Define a matrix strategy to test with multiple MongoDB versions
     strategy:
       matrix:
-        mongodb-version: ['4.4.14', '5.0.9']
+        mongodb-version: ["4.4.14", "5.0.9"]
 
     # Defines the steps to execute in the job
     steps:
       # Step to checkout the repository code
       - name: Checkout repository
         uses: actions/checkout@v2
-        
+
       - name: Start MongoDB
         uses: MongoCamp/mongodb-github-action@1.0.0
         with:
@@ -37,7 +37,7 @@ jobs:
       - name: Install Node.js
         uses: actions/setup-node@v2
         with:
-          node-version: 'lts/*' # Use the latest LTS version of Node.js
+          node-version: "lts/*" # Use the latest LTS version of Node.js
 
       # Step to install project dependencies
       - name: Install dependencies
@@ -47,7 +47,7 @@ jobs:
       - name: Create .env file
         run: |
           cat << EOF >> ./.env
-          TEST_MONGODB_URI=mongodb://localhost:27017/testdatabase
+          MONGO_DB_URL=mongodb+srv://victorgustav98:zNjWptQ1SR53x689@cluster0.rnytinm.mongodb.net/
           EOF
 
       # Step to run tests

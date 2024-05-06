@@ -1,11 +1,14 @@
-const express = require('express');
-const mongoose = require('mongoose');
-require('dotenv').config();
+const express = require("express");
+const mongoose = require("mongoose");
+require("dotenv").config();
 
 const app = express();
 app.use(express.json());
 
-const mongoURI = process.env.NODE_ENV === 'test' ? process.env.TEST_MONGODB_URI : process.env.MONGODB_URI;
+const mongoURI =
+  process.env.NODE_ENV === "test"
+    ? process.env.MONGO_DB_URL
+    : process.env.MONGO_DB_URL;
 
 mongoose.connect(mongoURI, {
   useNewUrlParser: true,
@@ -15,15 +18,14 @@ mongoose.connect(mongoURI, {
 const todoSchema = new mongoose.Schema({
   text: {
     type: String,
-    required: true
+    required: true,
   },
 });
 
-const Todo = mongoose.model('Todo', todoSchema);
-
+const Todo = mongoose.model("Todo", todoSchema);
 
 // Get all todos
-app.get('/todos', async (req, res) => {
+app.get("/todos", async (req, res) => {
   try {
     const todos = await Todo.find();
     res.json(todos);
@@ -33,7 +35,7 @@ app.get('/todos', async (req, res) => {
 });
 
 // Create a new todo
-app.post('/todos', async (req, res) => {
+app.post("/todos", async (req, res) => {
   try {
     const todo = new Todo({
       text: req.body.text,
@@ -46,15 +48,14 @@ app.post('/todos', async (req, res) => {
 });
 
 // Delete a todo by ID
-app.delete('/todos/:id', async (req, res) => {
+app.delete("/todos/:id", async (req, res) => {
   try {
     const id = req.params.id;
     await Todo.findByIdAndDelete(id);
     res.sendStatus(204);
   } catch (error) {
-    res.status(404).json({ error: 'Todo not found' });
+    res.status(404).json({ error: "Todo not found" });
   }
 });
-
 
 module.exports = app;
