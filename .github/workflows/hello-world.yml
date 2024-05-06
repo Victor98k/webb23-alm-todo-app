@@ -3,7 +3,7 @@ name: HelloWorld Workflow
 on:
   push:
     branches:
-      - "tasks-lesson-one"
+      - tasks-lesson-one
 
 jobs:
   build:
