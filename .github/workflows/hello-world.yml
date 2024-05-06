@@ -1,9 +1,10 @@
 name: HelloWorld Worflow
 
+
 on:
   push:
     branches:
-      - tasks-lesson-one
+      - "tasks-lesson-one"
       # Defines event that trigger the workflow, tst
 
 jobs:
