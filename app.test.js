@@ -5,11 +5,11 @@ const app = require("./app");
 // Load environment variables from .env file
 require("dotenv").config();
 
-const mongoURI = process.env.MONGO_DB_URL;
+const mongoURI = process.env.TEST_MONGODB_URI;
 
 // Connect to the test database before running any tests
 beforeAll(async () => {
-  await mongoose.connect(process.env.MONGO_DB_URL, {
+  await mongoose.connect(process.env.TEST_MONGODB_URI, {
     useNewUrlParser: true,
     useUnifiedTopology: true,
   });

@@ -34,7 +34,7 @@ jobs:
       - name: Create .env file
         run: |
           cat << EOF >> ./.env
-          TEST_MONGODB_URI=${{ secrets.MONGO_DB_URL }}
+          TEST_MONGODB_URI=${{ secrets.TEST_MONGODB_URI }}
           EOF
           # This command uses the cat utility along with a here document 
           # (<< EOF) to append text to a file named .env. 

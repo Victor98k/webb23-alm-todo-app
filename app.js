@@ -7,8 +7,8 @@ app.use(express.json());
 
 const mongoURI =
   process.env.NODE_ENV === "test"
-    ? process.env.MONGO_DB_URL
-    : process.env.MONGO_DB_URL;
+    ? process.env.TEST_MONGODB_URI
+    : process.env.TEST_MONGODB_URI;
 
 mongoose.connect(mongoURI, {
   useNewUrlParser: true,
