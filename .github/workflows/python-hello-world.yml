@@ -1,0 +1,13 @@
+name: HelloWorld Workflow
+
+on:
+  push:
+    branches:
+      - tasks-two
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - name: python-hello-world
+        uses: hellp.py
