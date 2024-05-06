@@ -1,0 +1,14 @@
+name: HelloWorld Worflow
+
+on:
+  push:
+    branches:
+      - master
+      # Defines event that trigger the workflow
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+
+    steps:
+    run: npm install
