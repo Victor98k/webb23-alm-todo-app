@@ -9,5 +9,8 @@ jobs:
   build:
     runs-on: ubuntu-latest
     steps:
-      - name: python-hello-world
-        uses: hellp.py
+      - name: Checkout repository
+        uses: actions/checkout@v2
+
+      - name: Run Python script
+        run: python hellp.py
